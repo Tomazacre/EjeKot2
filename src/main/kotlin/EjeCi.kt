@@ -9,7 +9,7 @@ fun main() {
         clsVals(1999, 38, 5, false, "B")
     )
 
-    println(genPrec(auxLst, 300000000.0))
+    println(genPrec(auxLst, 3000000.0))
 }
 
 class clsVals(
@@ -20,9 +20,9 @@ class clsVals(
     var zon: String
 )
 
-fun genPrec(auxLst: List<clsVals>, auxPre: Double): List<Pair<String, Double>> {
+fun genPrec(auxLst: List<clsVals>, auxPre: Double): MutableList<String>{
 
-    var auxMut: MutableList<Pair<String, Double>> = mutableListOf()
+    var auxMut = mutableListOf<String>()
 
     for (i in auxLst.indices) {
         var cont = 0.0
@@ -30,25 +30,25 @@ fun genPrec(auxLst: List<clsVals>, auxPre: Double): List<Pair<String, Double>> {
         if (auxLst[i].zon == "A") {
 
             if (auxLst[i].gar) {
-                cont = (((auxLst[i].met * 1000) + (auxLst[i].hab * 5000) + 15000) * (2022 - auxLst[i].ani / 100)) * 1.0
+                cont = (((auxLst[i].met * 1000) + (auxLst[i].hab * 5000) + 15000) * ((auxLst[i].ani - 1) / 100)) * 1.0
             }else {
-                cont = (((auxLst[i].met * 1000) + (auxLst[i].hab * 5000)) * (2022 - auxLst[i].ani / 100)) * 1.0
+                cont = (((auxLst[i].met * 1000) + (auxLst[i].hab * 5000)) * ((auxLst[i].ani - 1) / 100)) * 1.0
             }
 
         } else if (auxLst[i].zon == "B") {
 
             if (auxLst[i].gar) {
-                cont = ((auxLst[i].met * 1000) + (auxLst[i].hab * 5000) + 15000) * (2022 - auxLst[i].ani / 100) * 1.5
+                cont = ((auxLst[i].met * 1000) + (auxLst[i].hab * 5000) + 15000) * ((auxLst[i].ani - 1) / 100) * 1.5
             } else {
-                cont = ((auxLst[i].met * 1000) + (auxLst[i].hab * 5000)) * (2022 - auxLst[i].ani / 100) * 1.5
+                cont = ((auxLst[i].met * 1000) + (auxLst[i].hab * 5000)) * ((auxLst[i].ani - 1) / 100) * 1.5
             }
         }
 
         if (cont <= auxPre) {
-            var cad = "Habitaciones: ${auxLst[i].hab}, Año: ${auxLst[i].ani}, Garage: ${auxLst[i].gar}, " +
-                    "Zona: ${auxLst[i].zon}, Metros: ${auxLst[i].met}"
+            var cad = "\nHabitaciones: ${auxLst[i].hab}, Año: ${auxLst[i].ani}, Garage: ${auxLst[i].gar}, " +
+                    "Zona: ${auxLst[i].zon}, Metros: ${auxLst[i].met}, Precio: $cont"
 
-            auxMut.add(Pair(cad, cont))
+            auxMut.add(cad)
         }
     }
     return auxMut
