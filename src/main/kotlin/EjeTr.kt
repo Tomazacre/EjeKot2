@@ -1,5 +1,5 @@
 fun main() {
-    val auxLst= mutableListOf<Int>(71,87,22,99,79,69,100,93,67,28,85)
+    val auxLst= mutableListOf(71,87,22,99,79,69,100,93,67,28,85)
     var auxMut= mutableListOf<String>()
 
     println(genCalif(auxLst,auxMut))
