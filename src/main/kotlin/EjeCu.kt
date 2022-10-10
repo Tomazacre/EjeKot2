@@ -4,7 +4,10 @@ fun main() {
         "Leng Interfaz" to 83,
         "Graficacion" to 100,
         "Simulacion" to 89,
-        "Investigacion" to 40
+        "Investigacion" to 40,
+        "Calculo" to 69,
+        "Sistemas Ope" to 100,
+        "Redes de Comp" to 72
     )
 
     println(genCalif(auxMap))
@@ -33,7 +36,7 @@ fun genCalif(auxM: Map<String,Int>): Map<String,String> {
 
         }
 
-        auxMut[contA.uppercase() + " "] = " ($contB)$aux"
+        auxMut["\n${contA.uppercase()} "] = " ($contB) $aux"
     }
 
     return auxMut

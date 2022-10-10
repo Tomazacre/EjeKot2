@@ -6,27 +6,27 @@ fun main() {
 }
 
 
-fun genCalif(auxLst: MutableList<Int>, auxMut: MutableList<String>): MutableList<String> {
+fun genCalif(auxLst: MutableList<Int>, auxRes: MutableList<String>): MutableList<String> {
 
     for (i in auxLst) {
 
         if (i >= 95 && i <= 100){
-            auxMut.add("\n($i) Excelente")
+            auxRes.add("\n($i) Excelente")
 
         }else if (i >= 85 && i <= 94){
-            auxMut.add("\n($i) Notable")
+            auxRes.add("\n($i) Notable")
 
         }else if (i >= 75 && i <= 84){
-            auxMut.add("\n($i) Bueno")
+            auxRes.add("\n($i) Bueno")
 
         }else if (i >= 70 && i <= 74){
-            auxMut.add("\n($i) Suficiente")
+            auxRes.add("\n($i) Suficiente")
 
         }else if (i <= 69){
-            auxMut.add("\n($i) Insuficiente")
+            auxRes.add("\n($i) Insuficiente")
 
         }
     }
 
-    return auxMut
+    return auxRes
 }

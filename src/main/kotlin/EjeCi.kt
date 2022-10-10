@@ -9,7 +9,7 @@ fun main() {
         clsVals(1999, 38, 5, false, "B")
     )
 
-    println(genPrec(auxLst, 3000000.0))
+    println(genPre(auxLst, 3000000.0))
 }
 
 class clsVals(
@@ -20,7 +20,7 @@ class clsVals(
     var zon: String
 )
 
-fun genPrec(auxLst: List<clsVals>, auxPre: Double): MutableList<String>{
+fun genPre(auxLst: List<clsVals>, auxPre: Double): MutableList<String>{
 
     var auxMut = mutableListOf<String>()
 
@@ -28,7 +28,6 @@ fun genPrec(auxLst: List<clsVals>, auxPre: Double): MutableList<String>{
         var cont = 0.0
 
         if (auxLst[i].zon == "A") {
-
             if (auxLst[i].gar) {
                 cont = (((auxLst[i].met * 1000) + (auxLst[i].hab * 5000) + 15000) * ((auxLst[i].ani - 1) / 100)) * 1.0
             }else {
@@ -36,12 +35,12 @@ fun genPrec(auxLst: List<clsVals>, auxPre: Double): MutableList<String>{
             }
 
         } else if (auxLst[i].zon == "B") {
-
             if (auxLst[i].gar) {
                 cont = ((auxLst[i].met * 1000) + (auxLst[i].hab * 5000) + 15000) * ((auxLst[i].ani - 1) / 100) * 1.5
             } else {
                 cont = ((auxLst[i].met * 1000) + (auxLst[i].hab * 5000)) * ((auxLst[i].ani - 1) / 100) * 1.5
             }
+
         }
 
         if (cont <= auxPre) {
@@ -51,5 +50,6 @@ fun genPrec(auxLst: List<clsVals>, auxPre: Double): MutableList<String>{
             auxMut.add(cad)
         }
     }
+
     return auxMut
 }
