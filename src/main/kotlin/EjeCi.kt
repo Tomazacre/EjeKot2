@@ -7,6 +7,7 @@ fun main() {
         clsVals(2000, 25, 2, false, "A"),
         clsVals(1980, 40, 4, true, "B"),
         clsVals(1999, 38, 5, false, "B")
+
     )
 
     println(genPre(auxLst, 3000000.0))
@@ -21,7 +22,6 @@ class clsVals(
 )
 
 fun genPre(auxLst: List<clsVals>, auxPre: Double): MutableList<String>{
-
     var auxMut = mutableListOf<String>()
 
     for (i in auxLst.indices) {

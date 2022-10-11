@@ -5,7 +5,6 @@ fun main() {
     println(genCalif(auxLst,auxMut))
 }
 
-
 fun genCalif(auxLst: MutableList<Int>, auxRes: MutableList<String>): MutableList<String> {
 
     for (i in auxLst) {
